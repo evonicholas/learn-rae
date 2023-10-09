@@ -16,5 +16,5 @@ https://docs.luxonis.com/projects/hardware/en/latest/pages/rae/
 
 To start using rae, we can use RobotHub, the cloud platform prepared by Luxonis. By using RobotHub, we can connect our computer (or smartphone) with rae. Simply follow the instruction that available from their documentation. Basically, sign up to use the RobotHub service. Then put the WiFi information and scan the QR code shown on the page to connect with rae. In addition, we can also monitor and control the rae by using this platform.
 
-![RobotHub Dashboard show 1 connected robot](https://imgur.com/a/NuLXBBh)
+![RobotHub Dashboard show 1 connected robot](https://i.imgur.com/x58RX4l.png)
 
