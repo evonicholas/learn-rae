@@ -12,9 +12,19 @@ The rae is a product developed by Luxonis, known for their OAK series of stereo 
 https://github.com/luxonis/rae-ros
 https://docs.luxonis.com/projects/hardware/en/latest/pages/rae/
 
-#### Robothub
+#### RobotHub
 
 To start using rae, we can use RobotHub, the cloud platform prepared by Luxonis. By using RobotHub, we can connect our computer (or smartphone) with rae. Simply follow the instruction that available from their documentation. Basically, sign up to use the RobotHub service. Then put the WiFi information and scan the QR code shown on the page to connect with rae. In addition, we can also monitor and control the rae by using this platform.
 
 ![RobotHub Dashboard show 1 connected robot](https://i.imgur.com/x58RX4l.png)
+
+### Tutorial 2: Controlling RAE
+
+Based on the developer documentation, we can control rae by using 2 method. The first method is use the RobotHub, first we will use this method. After connecting the rae with RobotHub, now we can see the device connected. From the "Robot" tab from the left side dashboard, we can see the information about the connected robot like in the picture below.
+
+![RobotHub Dashboard show 1 connected robot](https://i.imgur.com/jFqp8Fy.png)
+
+From this page, select the "RAE - Default app" in the Percepation Apps box. Now, we can see the activity and the logs of the robot. By selecting the Local Frontend, we can control the robot and get the livefeed from its camera. While we are able to control it, the control system are not perfect. Based on the test conducted, there are some difficulty in controlling the robot accurately.
+
+
 
