@@ -24,7 +24,14 @@ Based on the developer documentation, we can control rae by using 2 method. The 
 
 ![RobotHub Dashboard show 1 connected robot](https://i.imgur.com/jFqp8Fy.png)
 
-From this page, select the "RAE - Default app" in the Percepation Apps box. Now, we can see the activity and the logs of the robot. By selecting the Local Frontend, we can control the robot and get the livefeed from its camera. While we are able to control it, the control system are not perfect. Based on the test conducted, there are some difficulty in controlling the robot accurately.
+From this page, select the "RAE - Default app" in the Percepation Apps box. Now, we can see the activity and the logs of the robot. By selecting the Local Frontend, we can control the robot and get the livefeed from its camera. 
 
+![Display clicking local frontend button](https://i.imgur.com/my1jMZu.png)
+
+Click the button to take control RAE.
+
+![Controlling RAE's display](https://i.imgur.com/9QRS2TX.png)
+
+We can use the joystick available on the screen to control your RAE. In addition, there are also 3 buttons on the top of the scree. Left button will change the control from joystick style to arrow style, and vice versa. The middle button allow you to change the display of lcd on your RAE. Finally, the right button you can modify the led color of your RAE.
 
 
