@@ -73,6 +73,8 @@ If you rotate the wheel, the value will change, its to make sure the motors are 
 
 ### Some possible errors
 
+#### Docker run resulting in device or resource busy
+
 ![echo: write error: Device or resource busy](https://i.imgur.com/52ec3gs.png)
 
 when running
@@ -94,7 +96,7 @@ echo 2 > /sys/class/pwm/pwmchip0/unexport && echo 1 > /sys/class/pwm/pwmchip0/un
 and run the docker run command again.
 
 
-
+#### GPIO Busy
 
 ![error requesting GPIO lines: Device or resource busy](https://i.imgur.com/gSZLL8v.png)
 
