@@ -56,5 +56,20 @@ docker run -it --restart=unless-stopped -v /dev/:/dev/ -v /sys/:/sys/ --privileg
 
 At this step you run the image of the docker inside the RAE, and you have ROS2 pre-installed inside the images. try run ros2 command inside the images ex: ros2 node list
 
+One of the example by running the provided script.
 
+Testing the Encoder:
+Run the following command to initiate the encoder testing process:
+
+```bash
+ros2 run rae_hw test_encoders
+```
+
+The output should be like this:
+
+![Expected output](https://i.imgur.com/Gexg42M.png)
+
+If you rotate the wheel, the value will change, its to make sure the motors are working.
+
+### Some possible issues
 
