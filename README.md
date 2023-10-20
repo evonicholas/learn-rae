@@ -34,4 +34,27 @@ Click the button to take control RAE.
 
 We can use the joystick available on the screen to control your RAE. In addition, there are also 3 buttons on the top of the scree. Left button will change the control from joystick style to arrow style, and vice versa. The middle button allow you to change the display of lcd on your RAE. Finally, the right button you can modify the led color of your RAE.
 
+### Tutorial 3: ROS2 in RAE
+
+Based on the rae-ros github, we can implement ROS on RAE. In this step we are going to use docker, make sure to have docker installed in your machine. Download the image provided by the Luxonis by 
+
+```bash
+docker pull luxonis/rae-ros-robot:humble
+```
+
+Then, we are going to upload the image to our RAE. We can either using a USB cable or by connecting to its WiFi. We are going to use the first option as its more simple and faster. Connect the USB from computer to RAE and then we remotely accessing the command line of the robot's onboard computer using the SSH (Secure SHell) protocol. (Make sure you have 7-8 GB of free space in the /data directory on the robot.)
+
+```bash
+docker save luxonis/rae-ros-robot:humble | ssh -C root@192.168.197.55 docker load
+```
+
+Then run Docker Image on the Robot. SSH into the robot and execute the Docker image.
+
+```bash
+docker run -it --restart=unless-stopped -v /dev/:/dev/ -v /sys/:/sys/ --privileged  --net=host luxonis/rae-ros-robot:humble
+```
+
+At this step you run the image of the docker inside the RAE, and you have ROS2 pre-installed inside the images. try run ros2 command inside the images ex: ros2 node list
+
+
 
