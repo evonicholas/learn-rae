@@ -71,5 +71,32 @@ The output should be like this:
 
 If you rotate the wheel, the value will change, its to make sure the motors are working.
 
-### Some possible issues
+### Some possible errors
+
+![echo: write error: Device or resource busy](https://i.imgur.com/52ec3gs.png)
+
+when running
+
+```bash
+docker run -it --restart=unless-stopped -v /dev/:/dev/ -v /sys/:/sys/ --privileged  --net=host luxonis/rae-ros-robot:humble
+```
+
+This is due to line 5 in entrypoint.sh
+
+echo 2 > /sys/class/pwm/pwmchip0/export && echo 1 > /sys/class/pwm/pwmchip0/export && chmod -R a+rw /sys/class/pwm/pwmchip0/pwm1/ && chmod -R a+rw /sys/class/pwm/pwmchip0/pwm2/ && chmod -R a+rw /dev/gpiochip0
+
+This mean pwmchip0 already exported, simply run:
+
+```bash
+echo 2 > /sys/class/pwm/pwmchip0/unexport && echo 1 > /sys/class/pwm/pwmchip0/unexport
+```
+
+and run the docker run command again.
+
+
+
+
+![error requesting GPIO lines: Device or resource busy](https://i.imgur.com/gSZLL8v.png)
+
+It possible when you run the "ros2 run" command, the script are using the GPIO pin, and conflicted to Device or resource busy. This problem due to the RAE in RobotHub running perception apps and make the GPIO conflicted. Shut down the perception apps in RobotHub and run the script again.
 
