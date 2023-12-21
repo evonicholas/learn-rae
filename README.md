@@ -71,6 +71,72 @@ The output should be like this:
 
 If you rotate the wheel, the value will change, its to make sure the motors are working.
 
+
+### Developing the RAE in ROS2
+
+The recommended approach is to utilize the Docker image provided by the RAE developers. Inside the Docker container, create a new ROS2 package. Ensure you follow ROS2 package naming conventions and structure.
+
+1. Open a terminal and establish an SSH connection to your development environment:
+
+   ```bash
+   ssh root@192.168.197.55
+   ```
+
+2. Use the following command to run the RAE Docker image. If it's your first time running the image, use:
+
+   ```bash
+   docker run -it --restart=unless-stopped -v /dev/:/dev/ -v /sys/:/sys/ --privileged --net=host luxonis/rae-ros-robot:humble
+   ```
+   
+If the container is already running in another terminal, attach to it using:
+
+  ```bash
+  docker exec -it [container_id] bash
+  ```
+
+3. Change directory to the `src` folder of your workspace:
+
+   ```bash
+   cd [workspace_name]/src
+   ```
+
+4. Create a new ROS2 package using the following command:
+
+   ```bash
+   ros2 pkg create --build-type ament_python [your_package_name]
+   ```
+
+Replace `[your_package_name]` with your desired package name.
+
+
+
+5. Navigate to your package's directory and start developing:
+
+  ```bash
+  cd [your_package_name]/[your_package_name]
+  ```
+
+6. In your package directory, create a new script. Here we name it `your_script_name.py`, but it can be any name you choose:
+   Note: Make sure you create it in your package directory.
+
+
+
+7. Modify the `setup.py` file in your package directory to include your new script.
+
+
+
+8. Return to your workspace directory and build your package:
+
+   ```bash
+   cd ~/workspace/
+   colcon build --packages-select [your_package_name]
+   ```
+
+
+Replace `[your_package_name]` and `your_script_name.py` with the actual names you've chosen for your package and script.
+
+
+
 ### Some possible errors
 
 #### Docker run resulting in device or resource busy
